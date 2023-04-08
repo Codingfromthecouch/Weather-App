@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <title>What is the Weather</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <nav>
+        <form id="searching">
+          <input
+            type="search"
+            placeholder="  City"
+            autocomplete="off"
+            autofocus="on"
+            id="givenCity"
+          />
+          <button id="searchButton" type="submit">Search</button>
+          <button id="find" type="submit">Use Current Location</button>
+        </form>
+      </nav>
+
+      <div class="row">
+        <div class="col-4">
+          <div class="weather">
+            <h1 id="cityName">Glasgow</h1>
+            <h2>
+              <span id="cityTemp">9℃   Clear sky
+            </h2>
+          </div>
+          <br />
+          <p id="humid">Humidity: 69%</p>
+          <p id="wind">Wind: 8km/h</p>
+
+          <br />
+          <br />
+          <span id="day_time">Sunday 11:40am</span>
+        </div>
+        <div class="col-4">
+          <img
+            class="weather_icon"
+            src="clearsky.jpg"
+            alt="weather icon"
+          />
+        </div>
+        <div class="col-4">
+          <ul>
+            <li id="day1">Mon</li>
+            <li id="day2">Tue</li>
+            <li id="day3">Wed</li>
+            <li id="day4">Thur</li>
+            <li id="day5">Fri</li>
+            <li id="day6">Sat</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
