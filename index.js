@@ -22,13 +22,11 @@ function currentDate(now) {
   dateAndTime.innerHTML = `${day} ${hours}:${minutes}`;
 }
 
-function Rest_of_week(timestamp) {
-  let today = new Date();
-  console.log(today);
-  let day = today.getDay();
-  console.log(day);
-  let tomorrow = today.getDate() * 1000;
-  console.log(tomorrow);
+function Rest_of_week() {
+  let date = new Date();
+  let tomorrowDate = new Date(date.getTime() + 1000 * 60 * 60 * 24);
+
+  console.log(tomorrowDate);
   let short_weekdays = ["sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
   console.log(short_weekdays[day]);
 }
