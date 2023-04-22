@@ -1,4 +1,7 @@
-function currentDate(now) {
+function showDate(timestamp) {
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+  let minutes = date.getMinutes();
   let weekDays = [
     "Sunday",
     "Monday",
@@ -8,61 +11,42 @@ function currentDate(now) {
     "Friday",
     "Saturday",
   ];
+  let day = weekDays[date.getDay()];
 
-  let day = weekDays[now.getDay()];
-  let minutes = `${now.getMinutes()}`;
-  let hours = `${now.getHours()}`;
-  let dateAndTime = document.querySelector("#day_time");
   if (minutes < 10) {
-    minutes = `0${now.getHours()}`;
+    minutes = `0${minutes}`;
   }
   if (hours < 10) {
-    hours = `0${now.getHours()}`;
+    hours = `0${hours}`;
   }
-  dateAndTime.innerHTML = `${day} ${hours}:${minutes}`;
+
+  return `${day} ${hours}:${minutes}`;
 }
-
-function Rest_of_week() {
-  let date = new Date();
-  let tomorrowDate = new Date(date.getTime() + 1000 * 60 * 60 * 24);
-
-  console.log(tomorrowDate);
-  let short_weekdays = ["sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
-  console.log(short_weekdays[day]);
-}
-
-let now = new Date();
-currentDate(now);
-
-//Rest_of_week();
 
 function results(response) {
   console.log(response);
-  let cityGiven = `${response.data.name}`;
-  cityName.innerHTML = `${cityGiven}`;
-
-  let temperature = Math.round(response.data.main.temp);
-  let fTemperature = (temperature * 9) / 5 + 32;
+  let city = document.querySelector(`#cityName`);
   let tempElement = document.querySelector(`#cityTemp`);
-  let wDescrition = document.querySelector(`#weatherDescription`);
-  let description = response.data.weather[0].description;
-  tempElement.innerHTML = `${temperature}`;
-  wDescrition.innerHTML = ` ${description}`;
+  let weatherElement = document.querySelector(`#weatherDesc`);
+  let weatherEmoji = document.querySelector("#weatherIcon");
+  let humidityElement = document.querySelector(`#humid`);
+  let windSpeed = document.querySelector(`#wind`);
+  let sunElement = document.querySelector(`#sun`);
+  let date = document.querySelector("#date");
 
-  let humidity = response.data.main.humidity;
-  let humidElement = document.querySelector(`#humid`);
-  humidElement.innerHTML = `Humidity: ${humidity}%`;
+  cTemp = Math.round(response.data.main.temp);
 
-  let windSpeed = Math.round(response.data.wind.speed);
-  let windElement = document.querySelector(`#wind`);
-  windElement.innerHTML = `Wind: ${windSpeed}km/h`;
-
-  let weatherEmoji = document.querySelector("#weather_icon");
-  weatherEmoji.setAttribute(
-    "src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-  );
-  return temperature;
+  city.innerHTML = response.data.name;
+  tempElement.innerHTML = Math.round(cTemp);
+  weatherElement.innerHTML = response.data.weather[0].main;
+  humidityElement.innerHTML = `Humidity: ${Math.round(
+    response.data.main.humidity
+  )}%`;
+  windSpeed.innerHTML = `Wind Speed: ${Math.round(
+    response.data.wind.speed
+  )}km/h`;
+  sunElement.innerHTML = `Sunrise:xxxxxxxxxx | sunset: xxxxx`;
+  date.innerHTML = "Last updated: " + showDate(response.data.dt * 1000);
 }
 
 function pullData(event) {
@@ -90,29 +74,33 @@ function iAmHere(position) {
   axios.get(`${apiUrl}&appid=${apiKey}`).then(results);
 }
 
+function showCTemp(event) {
+  event.preventDefault();
+  let tempElement = document.querySelector(`#cityTemp`);
+  tempElement.innerHTML = cTemp;
+}
+
+function showFTemp(event) {
+  event.preventDefault();
+  let tempElement = document.querySelector(`#cityTemp`);
+  fTemp = (cTemp * 9) / 5 + 32;
+  tempElement.innerHTML = Math.round(fTemp);
+}
+let fTemp = null;
+let cTemp = null;
+
+let celsius = document.querySelector("#cTemp");
+celsius.addEventListener("click", showCTemp);
+
+let fahrenheit = document.querySelector("#fTemp");
+fahrenheit.addEventListener("click", showFTemp);
+
 function getCurrentPosition(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(iAmHere);
 }
-
 let find = document.getElementById("find");
 find.addEventListener("click", getCurrentPosition);
 
 let lookUpCity = document.querySelector(`#searchButton`);
 lookUpCity.addEventListener("click", pullData);
-
-function unitsC(event) {
-  event.preventDefault();
-  cityTemp.innerHTML = `${temperature} `;
-}
-
-let celsius = document.querySelector("#cTemp");
-celsius.addEventListener("click", unitsC);
-
-function unitsF(event) {
-  event.preventDefault();
-  cityTemp.innerHTML = Math.round(temperature * 1.8 + 32);
-}
-
-let fahrenheit = document.querySelector("#fTemp");
-fahrenheit.addEventListener("click", unitsF);

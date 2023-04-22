@@ -22,8 +22,8 @@
   </head>
 
   <body>
+    <div class="weatherAppWrapper">
     <div class="container">
-      <div class="weatherAppWrapper">
         <nav>
           <form id="searching">
             <input
@@ -39,24 +39,27 @@
         </nav>
 
         <div class="row">
-          <div class="col-4">
+          <div class="col-6">
             <div class="weather">
-              <h1 id="cityName"></h1>
+              <h1 id="cityName">Glasgow</h1>
+              <div class ="flex-container">
               <h2>
-                <span id="cityTemp"></span><a id="cTemp" href="`*`">℃|</a
-                ><a id="fTemp" href="`*`">℉</a>
-                <span id="weatherDesc"></span>
+                <span id="cityTemp">9 </span><a id="cTemp" href="`*`">  ℃|</a
+                ><a id="fTemp" href="`*`" class = "activeLink">℉</a>
+                </br>
+                <span id="weatherDesc"> Clear Skys </span>
+                <img id="weatherIcon" src="clearsky.jpg" alt="Clear Skys" />
               </h2>
-              <img id="weather_icon" src="clearsky.jpg" alt="weather icon" />
+              
             </div>
-            <br />
-            <p id="humid"></p>
-            <p id="wind"></p>
-            <br />
-            <br />
-            <span id="day_time">Sunday 11:40am</span>
+            </div>
+
+            <p id="humid">Humidity: 69%</p>
+            <p id="wind">Wind: 8km/h</p>
+            <p id="sun">sunrise 11am </p>
+            <span id="date">Sunday 11:40am</span>
           </div>
-          <div class="col-2">
+          <div class="col-6">
             <ul>
               <li id="day1">Mon</li>
               <li id="day2">Tue</li>
@@ -68,6 +71,7 @@
           </div>
         </div>
       </div>
+    </div>
     </div>
     <a
       href="https://github.com/Codingfromthecouch/Weather-App/find/main"
