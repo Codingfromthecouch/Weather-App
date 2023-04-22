@@ -23,59 +23,59 @@
 
   <body>
     <div class="container">
-      <nav>
-        <form id="searching">
-          <input
-            type="search"
-            placeholder="  City"
-            autocomplete="off"
-            autofocus="on"
-            id="givenCity"
-          />
-          <button id="searchButton" type="submit">Search</button>
-          <button id="find" type="submit">Use Current Location</button>
-        </form>
-      </nav>
+      <div class="weatherAppWrapper">
+        <nav>
+          <form id="searching">
+            <input
+              type="search"
+              placeholder="  City"
+              autocomplete="off"
+              autofocus="on"
+              id="givenCity"
+            />
+            <button id="searchButton" type="submit">Search</button>
+            <button id="find" type="submit">Use Current Location</button>
+          </form>
+        </nav>
 
-      <div class="row">
-        <div class="col-4">
-          <div class="weather">
-            <h1 id="cityName">Glasgow</h1>
-            <h2>
-              <span id="cityTemp">9℃   Clear sky
-            </h2>
+        <div class="row">
+          <div class="col-4">
+            <div class="weather">
+              <h1 id="cityName"></h1>
+              <h2>
+                <span id="cityTemp"></span><a id="cTemp" href="`*`">℃|</a
+                ><a id="fTemp" href="`*`">℉</a>
+                <span id="weatherDesc"></span>
+              </h2>
+              <img id="weather_icon" src="clearsky.jpg" alt="weather icon" />
+            </div>
+            <br />
+            <p id="humid"></p>
+            <p id="wind"></p>
+            <br />
+            <br />
+            <span id="day_time">Sunday 11:40am</span>
           </div>
-          <br />
-          <p id="humid">Humidity: 69%</p>
-          <p id="wind">Wind: 8km/h</p>
-
-          <br />
-          <br />
-          <span id="day_time">Sunday 11:40am</span>
-        <br/>
-        <br/>
-         <a href="https://github.com/Codingfromthecouch/Weather-App/find/main" target ="_blank" id="codeLink"> Open code by Hannah</a>
-        </div>
-        <div class="col-2">
-          <img
-            class="weather_icon"
-            src="clearsky.jpg"
-            alt="weather icon"
-          />
-        </div>
-        <div class="col-2">
-          <ul>
-            <li id="day1">Mon</li>
-            <li id="day2">Tue</li>
-            <li id="day3">Wed</li>
-            <li id="day4">Thur</li>
-            <li id="day5">Fri</li>
-            <li id="day6">Sat</li>
-          </ul>
+          <div class="col-2">
+            <ul>
+              <li id="day1">Mon</li>
+              <li id="day2">Tue</li>
+              <li id="day3">Wed</li>
+              <li id="day4">Thur</li>
+              <li id="day5">Fri</li>
+              <li id="day6">Sat</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
-
+    <a
+      href="https://github.com/Codingfromthecouch/Weather-App/find/main"
+      target="_blank"
+      id="codeLink"
+    >
+      Open code by Hannah</a
+    >
     <script src="index.js"></script>
   </body>
 </html>

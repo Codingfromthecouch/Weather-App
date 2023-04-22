@@ -34,7 +34,7 @@ function Rest_of_week() {
 let now = new Date();
 currentDate(now);
 
-Rest_of_week();
+//Rest_of_week();
 
 function results(response) {
   console.log(response);
@@ -42,10 +42,12 @@ function results(response) {
   cityName.innerHTML = `${cityGiven}`;
 
   let temperature = Math.round(response.data.main.temp);
-  let ftemp = Math.round(temperature * 1.8 + 32);
+  let fTemperature = (temperature * 9) / 5 + 32;
   let tempElement = document.querySelector(`#cityTemp`);
+  let wDescrition = document.querySelector(`#weatherDescription`);
   let description = response.data.weather[0].description;
-  tempElement.innerHTML = `${temperature}℃ ${ftemp}℉ | ${description}`;
+  tempElement.innerHTML = `${temperature}`;
+  wDescrition.innerHTML = ` ${description}`;
 
   let humidity = response.data.main.humidity;
   let humidElement = document.querySelector(`#humid`);
@@ -54,6 +56,13 @@ function results(response) {
   let windSpeed = Math.round(response.data.wind.speed);
   let windElement = document.querySelector(`#wind`);
   windElement.innerHTML = `Wind: ${windSpeed}km/h`;
+
+  let weatherEmoji = document.querySelector("#weather_icon");
+  weatherEmoji.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  return temperature;
 }
 
 function pullData(event) {
@@ -91,3 +100,19 @@ find.addEventListener("click", getCurrentPosition);
 
 let lookUpCity = document.querySelector(`#searchButton`);
 lookUpCity.addEventListener("click", pullData);
+
+function unitsC(event) {
+  event.preventDefault();
+  cityTemp.innerHTML = `${temperature} `;
+}
+
+let celsius = document.querySelector("#cTemp");
+celsius.addEventListener("click", unitsC);
+
+function unitsF(event) {
+  event.preventDefault();
+  cityTemp.innerHTML = Math.round(temperature * 1.8 + 32);
+}
+
+let fahrenheit = document.querySelector("#fTemp");
+fahrenheit.addEventListener("click", unitsF);
