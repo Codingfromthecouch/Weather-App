@@ -23,7 +23,7 @@
 
   <body>
     <div class="weatherAppWrapper">
-    <div class="container">
+      <div class="container">
         <nav>
           <form id="searching">
             <input
@@ -42,21 +42,23 @@
           <div class="col-6">
             <div class="weather">
               <h1 id="cityName">Glasgow</h1>
-              <div class ="flex-container">
-              <h2>
-                <span id="cityTemp">9 </span><a id="cTemp" href="`*`">  ℃|</a
-                ><a id="fTemp" href="`*`" class = "activeLink">℉</a>
-                </br>
-                <span id="weatherDesc"> Clear Skys </span>
-                <img id="weatherIcon" src="clearsky.jpg" alt="Clear Skys" />
-              </h2>
-              
-            </div>
+              <div class="flex-container">
+                <h2>
+                  <span id="cityTemp">9 </span
+                  ><span class="units"
+                    ><a class="activeLink" id="cTemp" href="`*`">℃|</a
+                    ><a class="non-activeLink" id="fTemp" href="`*`">℉</a></span
+                  >
+                  <br />
+                  <span id="weatherDesc"> Clear Skys </span>
+                  <img id="weatherIcon" src="clearsky.jpg" alt="Clear Skys" />
+                </h2>
+              </div>
             </div>
 
             <p id="humid">Humidity: 69%</p>
             <p id="wind">Wind: 8km/h</p>
-            <p id="sun">sunrise 11am </p>
+            <p id="sun">sunrise 11am</p>
             <span id="date">Sunday 11:40am</span>
           </div>
           <div class="col-6">
@@ -71,7 +73,6 @@
           </div>
         </div>
       </div>
-    </div>
     </div>
     <a
       href="https://github.com/Codingfromthecouch/Weather-App/find/main"

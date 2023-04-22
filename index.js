@@ -78,6 +78,8 @@ function showCTemp(event) {
   event.preventDefault();
   let tempElement = document.querySelector(`#cityTemp`);
   tempElement.innerHTML = cTemp;
+  fahrenheit.classList.replace("activeLink");
+  celsius.classList.replace("non-activeLink");
 }
 
 function showFTemp(event) {
@@ -85,6 +87,8 @@ function showFTemp(event) {
   let tempElement = document.querySelector(`#cityTemp`);
   fTemp = (cTemp * 9) / 5 + 32;
   tempElement.innerHTML = Math.round(fTemp);
+  fahrenheit.classList.replace("non-activeLink");
+  celsius.classList.replace("activeLink");
 }
 let fTemp = null;
 let cTemp = null;

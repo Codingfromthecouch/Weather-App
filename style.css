@@ -43,26 +43,31 @@ h2 {
   display: inline-block;
 }
 
-h2 .non-activeLink {
-  color: #3044f9;
-  cursor: default;
-}
-h2 .non-activeLink:hover {
-  text-decoration: none;
-}
-
 .weatherDescription {
   text-transform: capitalize;
 }
 
-a {
-  text-decoration: none;
-  font-family: "Merriweather", serif;
-  font-weight: 700;
-  display: inline-block;
+.units .non-activeLink {
+  color: #0e20e2;
+  cursor: default;
   font-size: 20px;
-  margin-left: 5px;
+  text-decoration: none;
 }
+.units .non-activeLink:hover {
+  text-decoration: none;
+}
+
+.units .activeLink {
+  color: #7330f9;
+  cursor: default;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.units .non-activeLink:hover {
+  text-decoration: none;
+}
+
 .flex-container {
   display: flex;
   flex-flow: row wrap;
@@ -88,8 +93,9 @@ img {
   width: 150px;
 }
 
-#day_time {
+#date {
   margin-left: 100px;
+  margin-bottom: 100px;
   padding: 10px 50px 10px 20px;
   border-color: #272044;
   border: 1px solid;
