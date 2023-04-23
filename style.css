@@ -42,6 +42,7 @@ h2 {
   margin-left: 140px;
   font-family: "Merriweather", serif;
   font-weight: 700;
+  font-size: 30px;
   display: inline-block;
 }
 
@@ -102,11 +103,6 @@ img {
 
 #codeLink:hover {
   color: #0e20e2;
-}
-
-.flex {
-  display: flex;
-  flex-direction: row;
 }
 
 li {
