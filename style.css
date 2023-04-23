@@ -5,7 +5,7 @@
   border-color: grey;
 }
 
-nav {
+form {
   background: white;
   border: white;
   padding: 0;
@@ -43,28 +43,24 @@ h2 {
   display: inline-block;
 }
 
-.weatherDescription {
-  text-transform: capitalize;
-}
-
-.units .non-activeLink {
+.units .non-active {
   color: #0e20e2;
   cursor: default;
   font-size: 20px;
   text-decoration: none;
 }
-.units .non-activeLink:hover {
+.units .non-active:hover {
   text-decoration: none;
 }
 
-.units .activeLink {
+.units .active {
   color: #7330f9;
   cursor: default;
   font-size: 20px;
   text-decoration: none;
 }
 
-.units .non-activeLink:hover {
+.units .active:hover {
   text-decoration: none;
 }
 
@@ -74,19 +70,18 @@ h2 {
 }
 
 img {
-  display: block;
-  width: 70px;
-  height: 70px;
+  width: 80px;
+  height: 80px;
   border: 1px solid;
   border-radius: 50%;
   border-color: #272044;
-  margin-left: 100px;
+  margin-left: 50px;
 }
 
 #sun,
 #humid,
 #wind {
-  margin-left: 110px;
+  margin-left: 140px;
   font-family: "Merriweather", serif;
   font-weight: bold;
   border: none;
@@ -94,7 +89,6 @@ img {
 }
 
 #date {
-  margin-left: 100px;
   margin-bottom: 100px;
   padding: 10px 50px 10px 20px;
   border-color: #272044;
@@ -106,7 +100,6 @@ img {
 
 #codeLink {
   font-family: "Merriweather", serif;
-  margin-left: 200px;
   font-size: 15px;
   font-weight: bold;
 }

@@ -20,6 +20,13 @@ function showDate(timestamp) {
     hours = `0${hours}`;
   }
 
+  let nextDay = date + 1;
+  let ShortWeekDays = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
+  console.log(nextDay);
+  //let shortDay = ShortWeekDays[dateOfMonth.getDay()];
+  // let nextday = document.querySelector(`#day1`);
+  // nextday.innerHTML = `${shortDay}`;
+
   return `${day} ${hours}:${minutes}`;
 }
 
@@ -31,7 +38,6 @@ function results(response) {
   let weatherEmoji = document.querySelector("#weatherIcon");
   let humidityElement = document.querySelector(`#humid`);
   let windSpeed = document.querySelector(`#wind`);
-  let sunElement = document.querySelector(`#sun`);
   let date = document.querySelector("#date");
 
   cTemp = Math.round(response.data.main.temp);
@@ -45,8 +51,12 @@ function results(response) {
   windSpeed.innerHTML = `Wind Speed: ${Math.round(
     response.data.wind.speed
   )}km/h`;
-  sunElement.innerHTML = `Sunrise:xxxxxxxxxx | sunset: xxxxx`;
+
   date.innerHTML = "Last updated: " + showDate(response.data.dt * 1000);
+  weatherEmoji.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 
 function pullData(event) {
@@ -78,8 +88,8 @@ function showCTemp(event) {
   event.preventDefault();
   let tempElement = document.querySelector(`#cityTemp`);
   tempElement.innerHTML = cTemp;
-  fahrenheit.classList.replace("activeLink");
-  celsius.classList.replace("non-activeLink");
+  fahrenheit.classList.replace("active", "non-active");
+  celsius.classList.replace("non-active", "activeLink");
 }
 
 function showFTemp(event) {
@@ -87,16 +97,16 @@ function showFTemp(event) {
   let tempElement = document.querySelector(`#cityTemp`);
   fTemp = (cTemp * 9) / 5 + 32;
   tempElement.innerHTML = Math.round(fTemp);
-  fahrenheit.classList.replace("non-activeLink");
-  celsius.classList.replace("activeLink");
+  fahrenheit.classList.replace("non-active", "active");
+  celsius.classList.replace("active", "non-active");
 }
 let fTemp = null;
 let cTemp = null;
 
-let celsius = document.querySelector("#cTemp");
+let celsius = document.querySelector("#celsius");
 celsius.addEventListener("click", showCTemp);
 
-let fahrenheit = document.querySelector("#fTemp");
+let fahrenheit = document.querySelector("#fahrenheit");
 fahrenheit.addEventListener("click", showFTemp);
 
 function getCurrentPosition(event) {
