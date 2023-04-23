@@ -10,8 +10,8 @@ form {
   border: white;
   padding: 0;
   margin-top: 10px;
-  margin-left: 100px;
-  width: 300px;
+  margin-left: 50px;
+  width: 500px;
 }
 input {
   border-radius: 25px;
@@ -30,7 +30,7 @@ button {
 
 h1 {
   color: #7330f9;
-  padding: 50px 0px 10px 0px;
+  padding: 30px 0px 10px 0px;
   margin-left: 140px;
   font-family: "Merriweather", serif;
   font-weight: 700;
@@ -41,6 +41,10 @@ h2 {
   font-family: "Merriweather", serif;
   font-weight: 700;
   display: inline-block;
+}
+
+#celsius {
+  padding-left: 5px;
 }
 
 .units .non-active {
@@ -90,7 +94,8 @@ img {
 
 #date {
   margin-bottom: 100px;
-  padding: 10px 50px 10px 20px;
+  margin-left: 50px;
+  padding: 10px 50px 10px 10px;
   border-color: #272044;
   border: 1px solid;
   font-family: "Merriweather", serif;
@@ -102,6 +107,13 @@ img {
   font-family: "Merriweather", serif;
   font-size: 15px;
   font-weight: bold;
+  margin-left: 280px;
+  text-decoration: none;
+  cursor: default;
+  color: #7330f9;
+}
+#codeLink:hover {
+  color: #0e20e2;
 }
 
 .flex {
