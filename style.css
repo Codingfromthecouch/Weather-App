@@ -1,13 +1,15 @@
 .container {
   margin: 0 auto;
+  margin-top: 10px;
   max-width: 1000px;
-  border: 1px solid;
-  border-color: grey;
+  border: 15px solid;
+  border-color: #a64624;
+  background: rgb(255, 130, 96, 0.5);
 }
 
 form {
-  background: white;
-  border: white;
+  background: #ffc0af;
+  border: #430f58;
   padding: 0;
   margin-top: 10px;
   margin-left: 50px;
@@ -18,10 +20,10 @@ input {
   padding-left: 10px;
 }
 button {
-  background: #7330f9;
-  color: white;
+  background: #430f58;
+  color: #ffffff;
   border-radius: 15px;
-  border: #7330f9;
+  border: #430f58;
   font-family: "Merriweather", serif;
 }
 #find {
@@ -29,14 +31,14 @@ button {
 }
 
 h1 {
-  color: #7330f9;
+  color: #430f58;
   padding: 30px 0px 10px 0px;
   margin-left: 140px;
   font-family: "Merriweather", serif;
   font-weight: 700;
 }
 h2 {
-  color: #7330f9;
+  color: #430f58;
   margin-left: 140px;
   font-family: "Merriweather", serif;
   font-weight: 700;
@@ -48,7 +50,7 @@ h2 {
 }
 
 .units .non-active {
-  color: #0e20e2;
+  color: #304ef9;
   cursor: default;
   font-size: 20px;
   text-decoration: none;
@@ -58,7 +60,7 @@ h2 {
 }
 
 .units .active {
-  color: #7330f9;
+  color: #430f58;
   cursor: default;
   font-size: 20px;
   text-decoration: none;
@@ -76,9 +78,7 @@ h2 {
 img {
   width: 80px;
   height: 80px;
-  border: 1px solid;
   border-radius: 50%;
-  border-color: #272044;
   margin-left: 50px;
 }
 
@@ -93,25 +93,13 @@ img {
 }
 
 #date {
-  margin-bottom: 100px;
   margin-left: 50px;
-  padding: 10px 50px 10px 10px;
-  border-color: #272044;
-  border: 1px solid;
+  margin-top: 50px;
   font-family: "Merriweather", serif;
   border-radius: 25px;
   font-weight: bold;
 }
 
-#codeLink {
-  font-family: "Merriweather", serif;
-  font-size: 15px;
-  font-weight: bold;
-  margin-left: 280px;
-  text-decoration: none;
-  cursor: default;
-  color: #7330f9;
-}
 #codeLink:hover {
   color: #0e20e2;
 }
@@ -126,6 +114,7 @@ li {
   padding-top: 10px;
   margin-top: 10px;
   list-style: none;
+  color: #430f58;
   border-color: #272044;
   border: 1px solid;
   border-radius: 25px;
@@ -134,5 +123,17 @@ li {
   text-align: center;
   font-family: "Merriweather", serif;
   font-size: 15px;
+  font-weight: bold;
   flex-direction: column;
+}
+
+#codeLink {
+  font-family: "Merriweather", serif;
+  font-size: 15px;
+  font-weight: bold;
+  text-decoration: none;
+  flex-direction: right;
+  cursor: default;
+  color: #430f58;
+  margin-left: 350px;
 }
