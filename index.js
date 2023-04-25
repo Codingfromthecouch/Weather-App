@@ -20,13 +20,6 @@ function showDate(timestamp) {
     hours = `0${hours}`;
   }
 
-  let nextDay = date + 1;
-  let ShortWeekDays = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
-  console.log(nextDay);
-  //let shortDay = ShortWeekDays[dateOfMonth.getDay()];
-  // let nextday = document.querySelector(`#day1`);
-  // nextday.innerHTML = `${shortDay}`;
-
   return `${day} ${hours}:${minutes}`;
 }
 
@@ -65,7 +58,7 @@ function pullData(event) {
   let city = cityGiven.value;
 
   let apiKey = "tbo44a605238adb4290d1a5ad61393fa";
-  let apiLink = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+  let apiLink = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
   axios
     .get(apiLink)
     .then(results)
